@@ -1,0 +1,12 @@
+body {
+  background-color: red;
+}
+
+.resize-img {
+  height: 200px;
+  width: 100%;
+}
+
+.alert-warning {
+  display: none;
+}
