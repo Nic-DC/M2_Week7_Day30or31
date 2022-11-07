@@ -20,33 +20,67 @@
   <body>
     <div class="jumbotron">
       <h1 class="display-4">Good Music Collection</h1>
-      <p class="lead">Press the button below to see all the available songs.</p>
+      <p class="lead">Press the button below to see all the available songs 🎶.</p>
       <hr class="my-4" />
-      <p>It only takes 1 click</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">See all available songs!</a>
+
+      <!-- <a class="btn btn-dark btn-lg" href="#" role="button" data-toggle="modal" data-target="#songsModal"
+        >See all available songs!</a
+      > -->
+      <button type="button" class="btn btn-dark mt-2" data-toggle="modal" data-target="#songsModal">
+        See all available albums!
+      </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="songsModal" tabindex="-1" aria-labelledby="songsModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="songsModalLabel">All available songs</h5>
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row" id="modalRow"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Pink Floyd -->
     <div class="container" id="pinkContainer">
       <h2 id="pinkHeader">Pink Floyd Collection</h2>
-      <button type="button" class="btn btn-warning my-3" id="pinkBtn">See number of unique albums</button>
-      <div class="alert alert-warning" role="alert" id="pinkAlert"></div>
+      <button type="button" class="btn btn-warning my-3" id="pinkBtn" data-toggle="collapse" data-target="#pinkAlert">
+        See number of unique albums
+      </button>
+      <div class="alert alert-warning collapse" role="alert" id="pinkAlert"></div>
       <div class="row" id="mainRowPink"></div>
     </div>
 
     <!-- Daft Punk -->
     <div class="container" id="punkContainer">
       <h2 id="punkHeader">Daft Punk Collection</h2>
-      <button type="button" class="btn btn-warning my-3" id="punkBtn">See number of unique albums</button>
-      <div class="alert alert-warning" role="alert" id="punkAlert"></div>
+      <button type="button" class="btn btn-warning my-3" id="punkBtn" data-toggle="collapse" data-target="#punkAlert">
+        See number of unique albums
+      </button>
+      <div class="alert alert-warning collapse" role="alert" id="punkAlert"></div>
       <div class="row" id="mainRowPunk"></div>
     </div>
 
     <!-- Metallica -->
     <div class="container" id="metalContainer">
       <h2 id="metalHeader">Metallica Collection</h2>
-      <button type="button" class="btn btn-warning my-3" id="metalBtn">See number of unique albums</button>
-      <div class="alert alert-warning" role="alert" id="metalAlert"></div>
+      <button type="button" class="btn btn-warning my-3" id="metalBtn" data-toggle="collapse" data-target="#metalAlert">
+        See number of unique albums
+      </button>
+      <div class="alert alert-warning collapse" role="alert" id="metalAlert"></div>
       <div class="row" id="mainRowMetal"></div>
     </div>
     <!-- bootstrap js -->

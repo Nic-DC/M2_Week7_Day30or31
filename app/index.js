@@ -1,18 +1,6 @@
 console.log("test");
 
-// const options = {
-//   method: "GET",
-//   url: "https://deezerdevs-deezer.p.rapidapi.com/infos",
-//   headers: {
-//     "X-RapidAPI-Key": "d0ae19ece6msh1e9e4a680f20c33p167ea2jsne5ff1736876f",
-//     "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-//   },
-// };
-
-// fetch(options.url)
-//   .then((res) => res.json())
-//   .then((data) => console.log(data))
-//   .catch((error) => console.log("an error occurred: ", error));
+const allAvailableAlbums = []; // array that will hold ALL albums received from the API call
 
 /*---------------------------------
 Pink Floyd
@@ -55,6 +43,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=pink%20floyd",
                                 </div>
                             </div>    `;
       pinkIdsArray.push(pink.album.id);
+      allAvailableAlbums.push(pink.album.title);
     }
   })
   .catch((err) => console.error(err));
@@ -92,6 +81,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=daft%20punk", 
                                 </div>
                             </div>    `;
       punkIdsArray.push(punk.album.id);
+      allAvailableAlbums.push(punk.album.title);
     }
   })
   .catch((err) => console.error(err));
@@ -129,6 +119,7 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica", op
                                 </div>
                             </div>    `;
       metalIdsArray.push(metal.album.id);
+      allAvailableAlbums.push(metal.album.title);
     }
   })
   .catch((err) => console.error(err));
@@ -171,21 +162,38 @@ const seeUniques = function (arr) {
 pinkBtn.addEventListener("click", () => {
   let unique = seeUniques(pinkIdsArray);
   pinkAlert.innerText = unique;
-  pinkAlert.style.display = "block";
+  //   pinkAlert.style.display = "block";
 });
 
 punkBtn.addEventListener("click", () => {
   let unique = seeUniques(punkIdsArray);
   punkAlert.innerText = unique;
-  punkAlert.style.display = "block";
+  //   punkAlert.style.display = "block";
 });
 
 metalBtn.addEventListener("click", () => {
   let unique = seeUniques(metalIdsArray);
   metalAlert.innerText = unique;
-  metalAlert.style.display = "block";
+  //   metalAlert.style.display = "block";
 });
 
 /*---------------------------------
 EXTRAS 2
 ---------------------------------*/
+const modalRow = document.getElementById("modalRow");
+
+const allUniqueAlbums = function () {
+  const arr = allAvailableAlbums;
+  const uniqueAlbums = [];
+  for (let album of arr) {
+    if (!uniqueAlbums.includes(album)) {
+      uniqueAlbums.push(album);
+    }
+  }
+  console.log({ allAvailableAlbums });
+  console.log({ uniqueAlbums });
+  return uniqueAlbums;
+};
+allUniqueAlbums();
+
+const listUniqueAlbums = function () {};
