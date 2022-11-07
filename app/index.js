@@ -32,11 +32,11 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=pink%20floyd",
     console.log(response.data);
 
     for (let pink of response.data) {
-      rowPink.innerHTML += ` <div class="col12 col-sm-6 col-md-4 col-lg-3">
+      rowPink.innerHTML += ` <div class="col12 col-sm-6 col-md-4 col-lg-3 py-3">
                                 <div class="card" >
                                     <img src=${pink.album.cover} class="card-img-top resize-img" alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title">${pink.album.title}</h5>
+                                        <h5 class="card-title truncate">${pink.album.title}</h5>
                                         <p class="card-text"><i class="bi bi-hourglass-split"></i> Duration: ${pink.duration} min.</p>
                                         <a href="#" class="btn btn-dark">Go somewhere</a>
                                     </div>
@@ -70,11 +70,11 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=daft%20punk", 
     console.log(response.data);
 
     for (let punk of response.data) {
-      rowPunk.innerHTML += ` <div class="col12 col-sm-6 col-md-4 col-lg-3">
+      rowPunk.innerHTML += ` <div class="col12 col-sm-6 col-md-4 col-lg-3 py-3">
                                 <div class="card" >
                                     <img src=${punk.album.cover} class="card-img-top resize-img" alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title">${punk.album.title}</h5>
+                                        <h5 class="card-title truncate">${punk.album.title}</h5>
                                         <p class="card-text"><i class="bi bi-hourglass-split"></i> Duration: ${punk.duration} min.</p>
                                         <a href="#" class="btn btn-dark">Go somewhere</a>
                                     </div>
@@ -108,11 +108,11 @@ fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica", op
     console.log(response.data);
 
     for (let metal of response.data) {
-      rowMetal.innerHTML += ` <div class="col12 col-sm-6 col-md-4 col-lg-3">
+      rowMetal.innerHTML += ` <div class="col12 col-sm-6 col-md-4 col-lg-3 py-3">
                                 <div class="card" >
                                     <img src=${metal.album.cover} class="card-img-top resize-img" alt="...">
                                     <div class="card-body">
-                                        <h5 class="card-title">${metal.album.title}</h5>
+                                        <h5 class="card-title truncate">${metal.album.title}</h5>
                                         <p class="card-text"><i class="bi bi-hourglass-split"></i> Duration: ${metal.duration} min.</p>
                                         <a href="#" class="btn btn-dark">Go somewhere</a>
                                     </div>
@@ -181,6 +181,7 @@ metalBtn.addEventListener("click", () => {
 EXTRAS 2
 ---------------------------------*/
 const modalRow = document.getElementById("modalRow");
+const modalBtn = document.getElementById("modalBtn");
 
 const allUniqueAlbums = function () {
   const arr = allAvailableAlbums;
@@ -196,4 +197,20 @@ const allUniqueAlbums = function () {
 };
 allUniqueAlbums();
 
-const listUniqueAlbums = function () {};
+const listUniqueAlbums = function () {
+  let arr = allUniqueAlbums();
+
+  for (let album of arr) {
+    modalRow.innerHTML += `
+        <div class="container-fluid col6">
+            
+            <div class="badge badge-light text-wrap" >
+            <span>Album: </span><span>${album}</span>
+            </div>
+            
+        </div>
+        `;
+  }
+};
+modalBtn.addEventListener("click", listUniqueAlbums);
+//<span>Album: </span><span>${album}</span>

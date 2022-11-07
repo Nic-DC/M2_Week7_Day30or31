@@ -5,8 +5,13 @@ body {
 .resize-img {
   height: 200px;
   width: 100%;
+  object-fit: cover;
 }
 
-/* .alert-warning {
-  display: none;
-} */
+.truncate {
+  text-overflow: ellipsis;
+
+  /* Needed to make it work */
+  overflow: hidden;
+  white-space: nowrap;
+}
