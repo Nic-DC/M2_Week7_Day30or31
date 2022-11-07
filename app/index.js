@@ -199,10 +199,11 @@ allUniqueAlbums();
 
 const listUniqueAlbums = function () {
   let arr = allUniqueAlbums();
+  console.log({ arr });
 
   for (let album of arr) {
     modalRow.innerHTML += `
-        <div class="container-fluid col6">
+        <div class="container-fluid col12">
             
             <div class="badge badge-light text-wrap" >
             <span>Album: </span><span>${album}</span>

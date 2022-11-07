@@ -1,5 +1,5 @@
 body {
-  background-color: red;
+  background-image: linear-gradient(to right, #311703, rgb(236, 131, 12));
 }
 
 .resize-img {
@@ -14,4 +14,11 @@ body {
   /* Needed to make it work */
   overflow: hidden;
   white-space: nowrap;
+}
+
+.jumbotron {
+  background-image: url(/assets/shawn-sim-9lfubBqLbRc-unsplash.jpg);
+  object-fit: cover;
+  background-size: cover;
+  background-blend-mode: multiply;
 }
