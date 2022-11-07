@@ -16,13 +16,7 @@ const options = {
 const containerPink = document.getElementById("pinkContainer");
 const rowPink = document.getElementById("mainRowPink");
 
-// const pinkHeading = document.createElement("h2");
-// pinkHeading.innerText = "Pink Floyd Collection";
-// containerPink.appendChild(pinkHeading);
-
 containerPink.classList.add("mt-5");
-// const pinkHeader = document.getElementById("pinkHeader");
-// pinkHeader.innerHTML = "Pink Floyd Collection";
 
 const pinkIdsArray = [];
 
@@ -134,18 +128,6 @@ const pinkBtn = document.getElementById("pinkBtn");
 const punkBtn = document.getElementById("punkBtn");
 const metalBtn = document.getElementById("metalBtn");
 
-// const seePunkUniques = function () {
-//   let uniqueIds = [];
-//   for (let i = 0; i < punkIdsArray.length; i++) {
-//     console.log(punkIdsArray[i]);
-//     if (!uniqueIds.includes(punkIdsArray[i])) {
-//       uniqueIds.push(punkIdsArray[i]);
-//     }
-//   }
-//   console.log({ punkIdsArray });
-//     console.log({ uniqueIds });
-
-// };
 const seeUniques = function (arr) {
   let uniqueIds = [];
   for (let i = 0; i < arr.length; i++) {
